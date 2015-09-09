@@ -81,3 +81,12 @@ body {
     border-bottom: 0;
   }
 }
+
+div.result {
+    padding: 10px;
+    background-color: #FFF;
+}
+
+.color-gold {
+    color : blue;
+}

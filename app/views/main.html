@@ -1,23 +1,74 @@
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+  <h1>计算经典包开包收益</h1>
   <p class="lead">
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+    <ul class="list-group">
+      <li class="list-group-item ">普通: {{ season1.normal }} 张  (*2)</li>
+      <li class="list-group-item ">稀有: {{ season1.rare }} 张  (*2）</li>
+      <li class="list-group-item ">史诗: {{ season1.epic }} 张  (*2)</li>
+      <li class="list-group-item ">传说: {{ season1.legend }} 张  (*1)</li>
+    </ul>
   </p>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+  <form class="text-left form-horizontal row">
+    <div class="form-group">
+      <label class="col-sm-4" for="current_normal">已有普通数量(max {{season1_total.normal}}):</label>
+      <div class="col-sm-8">
+        <input id="current_normal" type="number" min="0" max="{{season1_total.normal}}" class="form-control" placeholder="0" ng-model="season1_current.normal">
+      </div>
+    </div>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+    <div class="form-group">
+      <label class="col-sm-4" for="current_rare">已有稀有数量(max {{season1_total.rare}}):</label>
+      <div class="col-sm-8">
+        <input id="current_rare" type="number" min="0" max="{{season1_total.rare}}" class="form-control" placeholder="0" ng-model="season1_current.rare">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-4" for="current_epic">已有史诗数量(max {{season1_total.epic}}):</label>
+      <div class="col-sm-8">
+        <input id="current_epic" type="number" min="0" max="{{season1_total.epic}}" class="form-control" placeholder="0" ng-model="season1_current.epic">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-4" for="current_legend">已有传说数量(max {{season1_total.legend}}):</label>
+      <div class="col-sm-8">
+        <input id="current_legend" type="number" min="0" max="{{season1_total.legend}}" class="form-control" placeholder="0" ng-model="season1_current.legend">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-4" for="current_gold_normal">已有金色普通数量(max {{season1_total.gold_normal}}):</label>
+      <div class="col-sm-8">
+        <input id="current_gold_normal" type="number" min="0" max="{{season1_total.gold_normal}}" class="form-control" placeholder="0" ng-model="season1_current.gold_normal">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-4" for="current_gold_rare">已有金色稀有数量(max {{season1_total.gold_rare}}):</label>
+      <div class="col-sm-8">
+        <input id="current_gold_rare" type="number" min="0" max="{{season1_total.gold_rare}}" class="form-control" placeholder="0" ng-model="season1_current.gold_rare">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-4" for="current_gold_epic">已有金色史诗数量(max {{season1_total.gold_epic}}):</label>
+      <div class="col-sm-8">
+        <input id="current_gold_epic" type="number" min="0" max="{{season1_total.gold_epic}}" class="form-control" placeholder="0" ng-model="season1_current.gold_epic">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-4" for="current_gold_legend">已有金色传说数量(max {{season1_total.gold_legend}}):</label>
+      <div class="col-sm-8">
+        <input id="current_gold_legend" type="number" min="0" max="{{season1_total.gold_legend}}" class="form-control" placeholder="0" ng-model="season1_current.gold_legend">
+      </div>
+    </div>
+
+    <div class="result pull-right">
+      单包期望收益为 : <span class="color-gold" ng-bind="calc_season1() | number"></span> 粉尘
+    </div>
+  </form>
 </div>
